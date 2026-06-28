@@ -65,14 +65,28 @@ export default function ResultClient() {
         <div className="rounded-xl border border-zinc-200 border-t-4 border-t-gold p-5">
           <p className="text-sm uppercase tracking-wide text-gold">Fantasy aesthetic</p>
           <p className="mt-1 text-lg font-medium">
-            {result.fantasy.map((m) => m.name).join(" x ")}
+            {result.fantasy.map((m, i) => (
+              <span key={m.slug}>
+                {i > 0 && " x "}
+                <Link href={`/aesthetics/${m.slug}`} className="hover:underline">
+                  {m.name}
+                </Link>
+              </span>
+            ))}
           </p>
           <p className="mt-1 text-sm text-zinc-500">What you&apos;re drawn to</p>
         </div>
         <div className="rounded-xl border border-zinc-200 border-t-4 border-t-zinc-400 p-5">
           <p className="text-sm uppercase tracking-wide text-zinc-500">Wearable aesthetic</p>
           <p className="mt-1 text-lg font-medium">
-            {result.wearable.map((m) => m.name).join(" x ")}
+            {result.wearable.map((m, i) => (
+              <span key={m.slug}>
+                {i > 0 && " x "}
+                <Link href={`/aesthetics/${m.slug}`} className="hover:underline">
+                  {m.name}
+                </Link>
+              </span>
+            ))}
           </p>
           <p className="mt-1 text-sm text-zinc-500">What you&apos;d actually wear</p>
         </div>

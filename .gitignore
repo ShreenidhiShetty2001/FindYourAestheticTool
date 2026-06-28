@@ -1,0 +1,11 @@
+# python (backend)
+.venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+
+# editor / tool-local state
+.claude/
+.vscode/
+
+# os
+.DS_Store
